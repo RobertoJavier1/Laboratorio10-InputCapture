@@ -1,0 +1,35 @@
+# A project translates into one executable or library.
+project:
+
+  groups:
+    - group: Source Files
+      files:
+        - file: ./main.c
+        - file: ./USART.c
+        - file: ./USART.h
+
+    - group: Device
+      files:
+        - file: ./Device/system_stm32g4xx.c
+        - file: ./Device/startup_stm32g431xx.s
+
+  # List components to use for your application.
+  # A software component is a re-usable unit that may be configurable.
+  # Device:Startup is intentionally NOT used: this pack's variant only
+  # produces real startup/system files via a CubeMX-generated gpdsc, so for a
+  # standalone (non-CubeMX) project the startup/system sources above are
+  # supplied directly instead.
+  components:
+    - component: ARM::CMSIS:CORE
+
+  # Explicit linker script (no CubeMX/RTE auto-generation available either).
+  linker:
+    - script: ./Device/G4_Test1.sct
+      for-compiler: AC6
+
+  # List executable file formats to be generated.
+  output:
+    type:
+      - elf
+      - hex
+      - map

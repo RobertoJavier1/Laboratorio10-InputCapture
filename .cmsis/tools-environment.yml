@@ -1,0 +1,89 @@
+cmsis-tools-environment:
+  version: 1.0.0
+  generated-by: arm.cmsis-csolution version 1.72.0
+  solution: ../G4_Test1.csolution.yml
+  environment:
+    path:
+      - c:/Users/rober/.vscode/extensions/arm.vscode-cmsis-debugger-1.10.1-win32-x64/tools/pyocd
+      - c:/Users/rober/.vscode/extensions/arm.cmsis-csolution-1.72.0-win32-x64/tools/cmsis-toolbox/bin
+      - c:/Users/rober/.vcpkg/artifacts/2139c4c6/tools.kitware.cmake/3.31.12/bin
+      - c:/Users/rober/.vcpkg/artifacts/2139c4c6/tools.ninja.build.ninja/1.13.2
+      - c:/Users/rober/.vcpkg/artifacts/2139c4c6/tools.arm.mdk.toolbox/1.1.0/bin
+      - c:/Users/rober/.vcpkg/artifacts/2139c4c6/compilers.arm.armclang/6.24.0/bin
+      - c:/Users/rober/.vcpkg/artifacts/2139c4c6/debuggers.arm.armdbg/6.11.0/bin
+      - c:/Users/rober/.vscode/extensions/arm.vscode-cmsis-debugger-1.10.1-win32-x64/tools/gdb/bin
+      - c:/Users/rober/.vscode/extensions/arm.cmsis-sds-0.13.0-win32-x64/tools
+    variables:
+      AC6_TOOLCHAIN_6_24_0: c:/Users/rober/.vcpkg/artifacts/2139c4c6/compilers.arm.armclang/6.24.0/bin/
+      cmake: c:/Users/rober/.vcpkg/artifacts/2139c4c6/tools.kitware.cmake/3.31.12/bin/cmake.exe
+      cmake_gui: c:/Users/rober/.vcpkg/artifacts/2139c4c6/tools.kitware.cmake/3.31.12/bin/cmake-gui.exe
+      ctest: c:/Users/rober/.vcpkg/artifacts/2139c4c6/tools.kitware.cmake/3.31.12/bin/ctest.exe
+      ninja: c:/Users/rober/.vcpkg/artifacts/2139c4c6/tools.ninja.build.ninja/1.13.2/ninja.exe
+  tools:
+    - name: pyOCD
+      version: v0.46.1
+      origin: built-in
+      provider:
+        type: vscode-extension
+        id: arm.vscode-cmsis-debugger
+      directory: c:/Users/rober/.vscode/extensions/arm.vscode-cmsis-debugger-1.10.1-win32-x64/tools/pyocd
+      manual: https://pyocd.io/docs/
+    - name: CMSIS-Toolbox
+      version: 2.15.0
+      origin: built-in
+      provider:
+        type: vscode-extension
+        id: arm.cmsis-csolution
+      directory: c:/Users/rober/.vscode/extensions/arm.cmsis-csolution-1.72.0-win32-x64/tools/cmsis-toolbox/bin
+      manual: https://open-cmsis-pack.github.io/cmsis-toolbox/
+    - name: tools.kitware.cmake
+      version: 3.31.12
+      origin: installed
+      provider:
+        type: vcpkg
+        id: arm.environment-manager
+      directory: c:/Users/rober/.vcpkg/artifacts/2139c4c6/tools.kitware.cmake/3.31.12
+    - name: tools.ninja.build.ninja
+      version: 1.13.2
+      origin: installed
+      provider:
+        type: vcpkg
+        id: arm.environment-manager
+      directory: c:/Users/rober/.vcpkg/artifacts/2139c4c6/tools.ninja.build.ninja/1.13.2
+    - name: tools.arm.mdk.toolbox
+      version: 1.1.0
+      origin: installed
+      provider:
+        type: vcpkg
+        id: arm.environment-manager
+      directory: c:/Users/rober/.vcpkg/artifacts/2139c4c6/tools.arm.mdk.toolbox/1.1.0
+    - name: compilers.arm.armclang
+      version: 6.24.0
+      origin: installed
+      provider:
+        type: vcpkg
+        id: arm.environment-manager
+      directory: c:/Users/rober/.vcpkg/artifacts/2139c4c6/compilers.arm.armclang/6.24.0
+    - name: debuggers.arm.armdbg
+      version: 6.11.0
+      origin: installed
+      provider:
+        type: vcpkg
+        id: arm.environment-manager
+      directory: c:/Users/rober/.vcpkg/artifacts/2139c4c6/debuggers.arm.armdbg/6.11.0
+    - name: Arm GNU GDB
+      version: 15.3.1
+      origin: built-in
+      provider:
+        type: vscode-extension
+        id: arm.vscode-cmsis-debugger
+      directory: c:/Users/rober/.vscode/extensions/arm.vscode-cmsis-debugger-1.10.1-win32-x64/tools/gdb/bin
+      manual: https://developer.arm.com/Tools%20and%20Software/GNU%20Toolchain
+    - name: sdsio-server
+      version: 3.0.0
+      origin: built-in
+      provider:
+        type: vscode-extension
+        id: arm.cmsis-sds
+      directory: c:/Users/rober/.vscode/extensions/arm.cmsis-sds-0.13.0-win32-x64/tools
+      manual: https://arm-software.github.io/SDS-Framework/main/utilities.html#sdsio-server

@@ -1,0 +1,24 @@
+; Linker script (Scatter file) for STM32G431KBTx - AC6 (armlink)
+; Standalone bare-metal project - memory map defined manually, no CubeMX/RTE generation.
+;
+; STM32G431KB: 128 KB Flash @ 0x08000000, 32 KB SRAM @ 0x20000000
+; Stack: 1 KB, Heap: 3 KB (must match Stack_Size in startup_stm32g431xx.s)
+
+LR_ROM0 0x08000000 0x00020000  {
+
+  ER_ROM0 0x08000000 0x00020000 {
+    *.o (RESET, +First)
+    *(InRoot$$Sections)
+    *(+RO +XO)
+  }
+
+  RW_RAM0 0x20000000 (0x00008000 - 0x00000C00 - 0x00000400) {
+    *(+RW +ZI)
+  }
+
+  ARM_LIB_HEAP  (AlignExpr(+0, 8)) EMPTY 0x00000C00  {
+  }
+
+  ARM_LIB_STACK (0x20000000 + 0x00008000) EMPTY -0x00000400 {
+  }
+}
